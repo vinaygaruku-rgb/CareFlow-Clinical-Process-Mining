@@ -1,0 +1,9 @@
+
+-- CareFlow: Monthly Clinical Event Analysis
+
+SELECT
+    FORMAT_TIMESTAMP('%Y-%m', timestamp) AS event_month,
+    COUNT(*) AS total_events
+FROM `careflow-512717.careflow.raw_events`
+GROUP BY event_month
+ORDER BY event_month;
